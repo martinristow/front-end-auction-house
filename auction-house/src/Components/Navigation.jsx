@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import './../Components/Navigation.css'
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -18,9 +18,9 @@ function Navigation() {
     };
 
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="custom-navbar">
             <Container fluid>
-                <Navbar.Brand as={Link} to="/">Home</Navbar.Brand> {/* Use Link for routing */}
+                <Navbar.Brand as={Link} to="/">Auction House</Navbar.Brand> {/* Use Link for routing */}
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
