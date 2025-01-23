@@ -1,0 +1,126 @@
+
+
+.full-screen-container {
+    position: absolute;
+    height: 94.1vh; /* Направи сликата да биде само за големината на првиот поглед */
+    width: 100%;
+    /*right: 0;*/
+    overflow: hidden; /* Не дозволува скролување по сликата */
+}
+
+.full-screen-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Одговара на целата ширина и висина без да ја деформира сликата */
+}
+
+.image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-40%, -40%);
+    text-align: center;
+    color: #000000;
+    /*background-color: rgba(84, 123, 154, 0.95); !* Лесно затемнување на позадината *!*/
+    padding: 40px;
+    border-radius: 10px;
+    width: 40%;
+    /*z-index: 1; !* За да бидете сигурни дека текстот ќе биде над сликата *!*/
+}
+
+.image-overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.image-overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #0083ca;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #00699c;
+}
+
+
+.patot-do-sovrsenata-ponuda{
+    color: #0083ca;
+    font-size: 50px !important;
+    font-weight: bold;
+}
+
+
+.tekst{
+    color: black !important;
+    font-size: 20px !important;
+
+}
+
+
+@-webkit-keyframes patot-do-sovrsenata-ponuda {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.patot-do-sovrsenata-ponuda {
+    -webkit-animation: patot-do-sovrsenata-ponuda 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: patot-do-sovrsenata-ponuda 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@keyframes patot-do-sovrsenata-ponuda {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+.full-screen-image {
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+@-webkit-keyframes full-screen-image {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes full-screen-image {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
