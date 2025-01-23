@@ -2,7 +2,7 @@ import React from "react";
 import "./HomeImage.css";
 import Slika from "./../assets/slika.png";
 
-function FluidExample() {
+function HomeImage() {
     return (
         <div className="full-screen-container">
             <img src={Slika} alt="Home" className="full-screen-image" />
@@ -17,4 +17,4 @@ function FluidExample() {
 
 
 
-export default FluidExample;
+export default HomeImage;
