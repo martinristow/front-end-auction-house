@@ -10,7 +10,7 @@ const LogoutButton = () => {
         navigate("/login");
     };
 
-    return <button onClick={handleLogout}>Logout</button>;
+    return <button onClick={handleLogout} className="btn btn-danger">Logout</button>;
 };
 
 export default LogoutButton;
