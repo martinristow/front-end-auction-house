@@ -1,0 +1,86 @@
+/* src/Components/CreateAuctionForm.css */
+
+.create-auction-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.create-auction-form h2 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.create-auction-form label {
+    font-size: 1rem;
+    color: #555;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.create-auction-form input,
+.create-auction-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.create-auction-form input[type="datetime-local"] {
+    cursor: pointer;
+}
+
+.create-auction-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.create-auction-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #0072af;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-auction-form button:hover {
+    background-color: #00699c;
+}
+
+.create-auction-form .error-message {
+    color: #e74c3c;
+    background-color: #f9e2e2;
+    border: 1px solid #e74c3c;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.create-auction-form input:focus,
+.create-auction-form textarea:focus,
+.create-auction-form button:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+@media (max-width: 768px) {
+    .create-auction-form {
+        padding: 1rem;
+    }
+}
