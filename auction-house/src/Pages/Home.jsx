@@ -13,13 +13,13 @@ import ContactForm from "../Components/ContactForm.jsx";
 const Home = () => {
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (!token) {
-            alert("You must be logged in to access this page.");
-            navigate("/login");
-        }
-    }, [navigate]);
+    // useEffect(() => {
+    //     const token = localStorage.getItem("token");
+    //     if (!token) {
+    //         alert("You must be logged in to access this page.");
+    //         navigate("/login");
+    //     }
+    // }, [navigate]);
 
     return (
        <>
