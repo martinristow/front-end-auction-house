@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LogoutButton from "../Components/LogoutButton";
 import HomeImage from "../Components/HomeImage.jsx";
+import Footer from "../Components/Footer.jsx";
+import Mainfunctionalities from "../Components/Mainfunctionalities.jsx";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -16,10 +18,16 @@ const Home = () => {
     }, [navigate]);
 
     return (
-        <div>
-            {/*<h1>Welcome to the Home Page!</h1>*/}
-            <HomeImage />
-        </div>
+       <>
+           <div>
+               <HomeImage />
+               {/*<h1>Zdr</h1>*/}
+                <Mainfunctionalities/>
+               <Footer />
+               {/*<h1>Zdravo</h1>*/}
+           </div>
+
+       </>
     );
 };
 
