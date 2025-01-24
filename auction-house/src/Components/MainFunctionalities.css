@@ -1,0 +1,30 @@
+.custom-img {
+    height: 400px; /* Поставете ја саканата висина */
+    /*object-fit: cover; !* Одговара на ширината и висината без да ја деформира сликата *!*/
+}
+
+.center-text {
+    text-align: center;
+    display: flex;
+    color: #0083ca;
+    padding: 5px;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+
+.center-text1{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.dodaj_padding_margin{
+    margin: 1px;
+    padding: 30px;
+}
