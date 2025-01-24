@@ -1,42 +1,43 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import AuctionDetails from './../Components/AuctionDetail.jsx';
+import BidsDetail from './../Components/BidsDetail.jsx';
+import CreateBid from "../Components/CreateBid.jsx";
 
-function AuctionDetails() {
-    const { id } = useParams();  // Вземањето на ID-то од URL
-    const [auction, setAuction] = useState(null);
+function AuctionPage() {
+    const { id } = useParams(); // Auction ID од URL
+    const [bids, setBids] = useState([]); // Држиме понуди
 
-    useEffect(() => {
-        const token = localStorage.getItem("token");  // Вземи го токенот од localStorage
-
-        // Правиме API повик за да ги земеме деталите за аукцијата
-        axios.get(`http://localhost:8000/auctions/${id}`, {
-            headers: {
-                Authorization: `Bearer ${token}`,  // Додај го токенот во заглавието
-            }
+    // Функција за вчитување на понудите од серверот
+    const fetchBids = () => {
+        const token = localStorage.getItem('token');
+        axios.get(`http://localhost:8000/bids/${id}`, {
+            headers: { Authorization: `Bearer ${token}` },
         })
             .then(response => {
-                setAuction(response.data);
+                setBids(response.data); // Сортирање од најново кон најстаро
             })
-            .catch(error => {
-                console.error('There was an error fetching the auction!', error);
-            });
+            .catch(error => console.error('Error fetching bids', error));
+    };
+
+    // Освежување при прво вчитување или промена на ID
+    useEffect(() => {
+        fetchBids();
     }, [id]);
 
-    if (!auction) {
-        return <div>Loading...</div>;
-    }
+    // Функција за локално додавање на нова понуда
+    const updateBids = (newBid) => {
+        setBids((prevBids) => [newBid, ...prevBids]); // Додавање на врвот
+    };
 
     return (
         <div>
-            <h1>{auction.title}</h1>
-            <p><strong>Опис:</strong> {auction.description}</p>
-            <p><strong>Почетна цена:</strong> {auction.starting_price} MKD</p>
-            <p><strong>Датум на завршување:</strong> {new Date(auction.end_date).toLocaleDateString()}</p>
-            <p><strong>Локација:</strong> {auction.location}</p>
-            {/* Додадете други полиња кои ги сакате да се прикажуваат */}
+            <AuctionDetails id={id} />
+            <BidsDetail bids={bids} /> {/* Пропси со понуди */}
+            <CreateBid auctionId={id} updateBids={updateBids} /> {/* Ажурирање на понудите */}
         </div>
     );
 }
 
-export default AuctionDetails;
+export default AuctionPage;
