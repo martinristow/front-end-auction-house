@@ -1,0 +1,43 @@
+/* AuctionDetails.css */
+
+/* Општи стилови за главниот контејнер */
+.auction-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9; /* Светла позадина */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Мала сенка за длабочина */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Наслов на аукцијата */
+.auction-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50; /* Темно сина боја */
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ecf0f1; /* Линија за одвојување */
+    padding-bottom: 10px;
+}
+
+/* Информации за аукцијата */
+.auction-details p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.auction-details strong {
+    color: #2980b9; /* Сина боја за насловите */
+}
+
+/* Стилови за празни податоци */
+.no-auction {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #e74c3c; /* Црвена боја за предупредување */
+    margin-top: 50px;
+}
