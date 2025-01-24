@@ -1,17 +1,19 @@
-
+body, html {
+    height: 100%; /* Осигурува целосна висина за страницата */
+    margin: 0; /* Отстранува стандардни маргини */
+    padding: 0;
+}
 
 .full-screen-container {
-    position: absolute;
-    height: 94.1vh; /* Направи сликата да биде само за големината на првиот поглед */
-    width: 100%;
-    /*right: 0;*/
-    overflow: hidden; /* Не дозволува скролување по сликата */
+    position: relative; /* Поставување на relative за нормално позиционирање на останатите елементи */
+    height: 100vh; /* Поставување на висина за целосниот екран */
+    overflow: hidden;
 }
 
 .full-screen-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Одговара на целата ширина и висина без да ја деформира сликата */
+    object-fit: cover;
 }
 
 .image-overlay {
@@ -21,11 +23,10 @@
     transform: translate(-40%, -40%);
     text-align: center;
     color: #000000;
-    /*background-color: rgba(84, 123, 154, 0.95); !* Лесно затемнување на позадината *!*/
     padding: 40px;
     border-radius: 10px;
     width: 40%;
-    /*z-index: 1; !* За да бидете сигурни дека текстот ќе биде над сликата *!*/
+    z-index: 1; /* Текстот ќе биде над сликата */
 }
 
 .image-overlay h1 {
