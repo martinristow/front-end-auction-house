@@ -4,6 +4,7 @@ import API from "../api/api";
 
 const LoginForm = ({ onLogin }) => {
     const [formData, setFormData] = useState({ username: "", password: "" });
+    const [errorMessage, setErrorMessage] = useState(""); // Состојба за грешка
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,11 +21,13 @@ const LoginForm = ({ onLogin }) => {
                 headers: { "Content-Type": "multipart/form-data" },
             });
             localStorage.setItem("token", res.data.access_token);
-            alert("Login successful!");
+            setErrorMessage(""); // Исчисти ја грешката ако е успешен логин
+            // alert("Login successful!");
             if (onLogin) onLogin();
         } catch (err) {
-            console.error(err.response.data);
-            alert("Invalid credentials.");
+            // console.error(err.response.data);
+            // Постави пораката за грешка
+            setErrorMessage("Invalid credentials. Please try again.");
         }
     };
 
@@ -62,12 +65,17 @@ const LoginForm = ({ onLogin }) => {
                     />
                 </div>
 
+                {errorMessage && ( // Прикажи ја пораката за грешка ако постои
+                    <div className="alert alert-danger" role="alert">
+                        {errorMessage}
+                    </div>
+                )}
+
                 <button type="submit" className="btn btn-primary w-100">
                     Submit
                 </button>
             </form>
         </div>
-
     );
 };
 
