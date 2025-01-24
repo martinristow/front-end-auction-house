@@ -21,6 +21,7 @@ function Navigation() {
     }, []);
 
     return (
+
         <Navbar expand="lg" className="custom-navbar">
             <Container fluid>
                 <Navbar.Brand as={Link} to="/">Auction House</Navbar.Brand>
@@ -34,7 +35,10 @@ function Navigation() {
                         {!isLoggedIn && <Nav.Link as={Link} to="/register">Register</Nav.Link>}
                         {!isLoggedIn && <Nav.Link as={Link} to="/login">Login</Nav.Link>}
                         {isLoggedIn && (
-                            <Nav.Link as={Link} to="/profile">Profile</Nav.Link> // Show profile link when logged in
+                            <>
+                            <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
+                            <Nav.Link as={Link} to="/auctions">Create Auctions</Nav.Link>
+                            </>
                         )}
                         <NavDropdown title="Categories" id="navbarScrollingDropdown">
                             <NavDropdown.Item href="/categories/active-auctions">Active Categories</NavDropdown.Item>
