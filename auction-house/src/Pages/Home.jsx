@@ -8,6 +8,7 @@ import Mainfunctionalities from "../Components/Mainfunctionalities.jsx";
 import WhyUseThisPlatform from "../Components/WhyUseThisPlatform.jsx";
 import GroupExample from "../Components/WhyUseThisPlatform.jsx";
 import GridExample from "../Components/WhyUseThisPlatform.jsx";
+import ContactForm from "../Components/ContactForm.jsx";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -27,6 +28,7 @@ const Home = () => {
                {/*<h1>Zdr</h1>*/}
                 <Mainfunctionalities/>
                <WhyUseThisPlatform/>
+               <ContactForm/>
                <Footer />
                {/*<h1>Zdravo</h1>*/}
            </div>

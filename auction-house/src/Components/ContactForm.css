@@ -1,0 +1,32 @@
+.center-textt {
+    text-align: center;
+    display: flex;
+    color: #000000;
+    padding: 5px;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.containerForm {
+    width: 60%; /* Постави ширина на 50% */
+    margin: 50px auto; /* Центрирај го контејнерот хоризонтално */
+    padding: 60px; /* Внатрешен простор */
+    box-sizing: border-box; /* Осигурај дека padding се смета во ширината */
+}
+
+
+.button23{
+    width: 100%;
+}
+
+
+.card-form{
+    font-size: 20px;
+    height: 100%;
+    padding: 50px;
+    margin: 50px;
+}
