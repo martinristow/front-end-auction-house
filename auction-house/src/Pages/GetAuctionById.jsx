@@ -4,6 +4,7 @@ import axios from 'axios';
 import AuctionDetails from './../Components/AuctionDetail.jsx';
 import BidsDetail from './../Components/BidsDetail.jsx';
 import CreateBid from "../Components/CreateBid.jsx";
+import Footer from "../Components/Footer.jsx";
 
 function AuctionPage() {
     const { id } = useParams(); // Auction ID од URL
@@ -36,6 +37,7 @@ function AuctionPage() {
             <AuctionDetails id={id} />
             <BidsDetail bids={bids} /> {/* Пропси со понуди */}
             <CreateBid auctionId={id} updateBids={updateBids} /> {/* Ажурирање на понудите */}
+            <Footer/>
         </div>
     );
 }
