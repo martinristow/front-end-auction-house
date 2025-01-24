@@ -30,10 +30,9 @@ function Navigation() {
                     <Nav
                         className="me-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
-                        navbarScroll
-                    >
-                        {!isLoggedIn && <Nav.Link as={Link} to="/register">Register</Nav.Link>}
-                        {!isLoggedIn && <Nav.Link as={Link} to="/login">Login</Nav.Link>}
+                        navbarScroll>
+                        {/*{!isLoggedIn && <Nav.Link as={Link} to="/register">Register</Nav.Link>}*/}
+                        {/*{!isLoggedIn && <Nav.Link as={Link} to="/login">Login</Nav.Link>}*/}
                         {isLoggedIn && (
                             <>
                             <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
@@ -44,6 +43,8 @@ function Navigation() {
                             <NavDropdown.Item href="/categories/active-auctions">Active Categories</NavDropdown.Item>
                             <NavDropdown.Item href="/categories/closed-auctions">Finished Categories</NavDropdown.Item>
                         </NavDropdown>
+                        {!isLoggedIn && <Nav.Link as={Link} to="/login">Login</Nav.Link>}
+                        {!isLoggedIn && <Nav.Link as={Link} to="/register">Register</Nav.Link>}
                     </Nav>
                     <Form className="d-flex">
 
