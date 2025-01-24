@@ -5,6 +5,9 @@ import LogoutButton from "../Components/LogoutButton";
 import HomeImage from "../Components/HomeImage.jsx";
 import Footer from "../Components/Footer.jsx";
 import Mainfunctionalities from "../Components/Mainfunctionalities.jsx";
+import WhyUseThisPlatform from "../Components/WhyUseThisPlatform.jsx";
+import GroupExample from "../Components/WhyUseThisPlatform.jsx";
+import GridExample from "../Components/WhyUseThisPlatform.jsx";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -23,6 +26,7 @@ const Home = () => {
                <HomeImage />
                {/*<h1>Zdr</h1>*/}
                 <Mainfunctionalities/>
+               <WhyUseThisPlatform/>
                <Footer />
                {/*<h1>Zdravo</h1>*/}
            </div>
