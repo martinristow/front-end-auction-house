@@ -1,0 +1,49 @@
+/* AuctionDetails.css */
+
+/* Контејнер за понудите */
+.bids-container {
+    margin-top: 30px; /* Простор помеѓу деталите за аукцијата и понудите */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff; /* Бел контраст за понудите */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Сенка за понудите */
+    color: #333;
+}
+
+/* Наслов за понудите */
+.bids-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50; /* Темно сина боја */
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Листа на понуди */
+.bids-list {
+    list-style: none; /* Отстранување на булети */
+    padding: 0;
+}
+
+.bids-list li {
+    background-color: #ecf0f1; /* Светло сива позадина за секоја понуда */
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7; /* Слаб обод за секоја понуда */
+    display: flex;
+    justify-content: space-between; /* Подредување на содржината */
+    align-items: center;
+}
+
+.bids-list li strong {
+    color: #2980b9; /* Сина боја за текстот */
+}
+
+/* Порака ако нема понуди */
+.no-bids {
+    font-size: 1rem;
+    color: #e74c3c; /* Црвена боја за порака */
+    text-align: center;
+    margin-top: 20px;
+}
