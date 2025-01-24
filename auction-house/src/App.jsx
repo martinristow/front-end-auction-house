@@ -10,6 +10,7 @@ import FinishedAuctions from "./Pages/FinishedAuctions.jsx";
 import ActiveAuctions from "./Pages/ActiveAuctions.jsx";
 import GetAuctionById from "./Pages/GetAuctionById.jsx";
 import PrivateRoute from './Components/PrivateRoute';
+import CreateAuction from "./Pages/CreateAuction.jsx";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
 
                 {/* Use PrivateRoute to wrap protected route */}
                 <Route path="/auction/:id" element={<PrivateRoute><GetAuctionById /></PrivateRoute>} />
+                <Route path="/auctions" element={<PrivateRoute><CreateAuction /></PrivateRoute>} />
             </Routes>
         </Router>
     );
