@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './../Components/Navigation.css'
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -9,18 +9,21 @@ import LogoutButton from "./LogoutButton.jsx";
 import { Link } from 'react-router-dom';
 
 function Navigation() {
-    // State to track if the user is logged in
+    // State za korisnikot
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    // Toggle login status (you can replace this logic with actual login/authentication handling)
-    const toggleLogin = () => {
-        setIsLoggedIn(!isLoggedIn);
-    };
+    // Provjeri dali postoi token vo localStorage
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            setIsLoggedIn(true);
+        }
+    }, []);
 
     return (
         <Navbar expand="lg" className="custom-navbar">
             <Container fluid>
-                <Navbar.Brand as={Link} to="/">Auction House</Navbar.Brand> {/* Use Link for routing */}
+                <Navbar.Brand as={Link} to="/">Auction House</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -34,18 +37,13 @@ function Navigation() {
                             <Nav.Link as={Link} to="/profile">Profile</Nav.Link> // Show profile link when logged in
                         )}
                         <NavDropdown title="Categories" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Active Categories</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">Finished Categories</NavDropdown.Item>
+                            <NavDropdown.Item href="/categories/active-auctions">Active Categories</NavDropdown.Item>
+                            <NavDropdown.Item href="/categories/closed-auctions">Finished Categories</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Form className="d-flex">
-                        <Form.Control
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
-                        />
-                        {isLoggedIn && <LogoutButton />} {/* Show Logout button only if logged in */}
+
+                        {isLoggedIn && <LogoutButton />}  {/* Show Logout button only if logged in */}
                     </Form>
                 </Navbar.Collapse>
             </Container>
