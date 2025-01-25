@@ -11,6 +11,7 @@ import ActiveAuctions from "./Pages/ActiveAuctions.jsx";
 import GetAuctionById from "./Pages/GetAuctionById.jsx";
 import PrivateRoute from './Components/PrivateRoute';
 import CreateAuction from "./Pages/CreateAuction.jsx";
+import AllAuctions from "./Pages/AllAuctions.jsx";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/categories/all" element={<AllAuctions />} />
                 <Route path="/categories/closed-auctions" element={<FinishedAuctions />} />
                 <Route path="/categories/active-auctions" element={<ActiveAuctions />} />
 

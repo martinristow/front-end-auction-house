@@ -40,8 +40,9 @@ function Navigation() {
                             </>
                         )}
                         <NavDropdown title="Categories" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="/categories/active-auctions">Active Categories</NavDropdown.Item>
-                            <NavDropdown.Item href="/categories/closed-auctions">Finished Categories</NavDropdown.Item>
+                            <NavDropdown.Item href="/categories/all">All Auctions</NavDropdown.Item>
+                            <NavDropdown.Item href="/categories/active-auctions">Active Auctions</NavDropdown.Item>
+                            <NavDropdown.Item href="/categories/closed-auctions">Finished Auctions</NavDropdown.Item>
                         </NavDropdown>
                         {!isLoggedIn && <Nav.Link as={Link} to="/login">Login</Nav.Link>}
                         {!isLoggedIn && <Nav.Link as={Link} to="/register">Register</Nav.Link>}
