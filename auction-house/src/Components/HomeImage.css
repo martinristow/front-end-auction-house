@@ -63,9 +63,10 @@ body, html {
 
 
 .tekst{
+    margin-top: 20px;
     color: black !important;
     font-size: 20px !important;
-
+    text-align: justify !important;
 }
 
 
