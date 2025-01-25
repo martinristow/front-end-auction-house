@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { Link } from 'react-router-dom';
+import Footer from "./../Components/Footer.jsx"
 
 const ActiveAuctions = () => {
     const [auctions, setAuctions] = useState([]);
@@ -35,28 +36,31 @@ const ActiveAuctions = () => {
     }
 
     return (
-        <div className="container mt-4">
-            <h1 className="text-center">Активни Аукции</h1>
-            <Row className="justify-content-center">
-                {auctions.map((auction) => (
-                    <Col md={4} key={auction.id} className="mb-4">
-                        <Card>
-                            <Card.Body>
-                                <Card.Title>{auction.title}</Card.Title>
-                                <Card.Text>
-                                    <strong>Опис:</strong> {auction.description} <br />
-                                    <strong>Почетна цена:</strong> {auction.starting_price} MKD <br />
-                                    <strong>Датум на завршување:</strong> {new Date(auction.end_date).toLocaleDateString()}
-                                </Card.Text>
-                                <Link to={`/auction/${auction.id}`}>
-                                    <Button variant="primary">Понуди сега</Button>
-                                </Link>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                ))}
-            </Row>
-        </div>
+        <>
+            <div className="container mt-4">
+                <h1 className="text-center">Активни Аукции</h1>
+                <Row className="justify-content-center">
+                    {auctions.map((auction) => (
+                        <Col md={4} key={auction.id} className="mb-4">
+                            <Card>
+                                <Card.Body>
+                                    <Card.Title>{auction.title}</Card.Title>
+                                    <Card.Text>
+                                        <strong>Опис:</strong> {auction.description} <br />
+                                        <strong>Почетна цена:</strong> {auction.starting_price} MKD <br />
+                                        <strong>Датум на завршување:</strong> {new Date(auction.end_date).toLocaleDateString()}
+                                    </Card.Text>
+                                    <Link to={`/auction/${auction.id}`}>
+                                        <Button variant="primary">Понуди сега</Button>
+                                    </Link>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    ))}
+                </Row>
+            </div>
+            <Footer />
+        </>
     );
 };
 
