@@ -51,7 +51,7 @@ const ActiveAuctions = () => {
                                         <strong>Датум на завршување:</strong> {new Date(auction.end_date).toLocaleDateString()}
                                     </Card.Text>
                                     <Link to={`/auction/${auction.id}`}>
-                                        <Button variant="primary">Понуди сега</Button>
+                                        <Button variant="primary"><b>Понуди сега</b></Button>
                                     </Link>
                                 </Card.Body>
                             </Card>
