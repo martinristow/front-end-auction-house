@@ -51,7 +51,9 @@ const ActiveAuctions = () => {
                                     )}
                                     <Card.Title>{auction.title}</Card.Title>
                                     <Card.Text>
-                                        <strong>Опис:</strong> {auction.description} <br />
+                                        <strong>Опис:</strong> {auction.description.length > 30
+                                        ? `${auction.description.slice(0, 30)}...`
+                                        : auction.description} <br />
                                         <strong>Почетна цена:</strong> {auction.starting_price} MKD <br />
                                         <strong>Датум на завршување:</strong> {new Date(auction.end_date).toLocaleDateString()}
                                     </Card.Text>

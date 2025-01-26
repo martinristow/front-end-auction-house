@@ -48,7 +48,9 @@ const FinishedAuctions = () => {
                                 )}
                                 <Card.Title>{auction.title}</Card.Title>
                                 <Card.Text>
-                                    <strong>Опис:</strong> {auction.description} <br />
+                                    <strong>Опис:</strong> {auction.description.length > 30
+                                    ? `${auction.description.slice(0, 30)}...`
+                                    : auction.description} <br />
                                     <strong>Цена:</strong> {auction.starting_price} MKD <br />
                                     <strong>Завршена на:</strong> {new Date(auction.end_date).toLocaleDateString('mk-MK', { day: '2-digit', month: '2-digit' }).replace(',', '')}
                                 </Card.Text>
