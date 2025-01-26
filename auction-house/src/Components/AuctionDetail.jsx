@@ -51,6 +51,14 @@ function AuctionDetails() {
         <div className="auction-container">
             <h1 className="auction-title">{auction.title}</h1>
             <div className="auction-details">
+                {/* Прикажи ја сликата */}
+                {auction.img && (
+                    <div className="auction-image">
+                        <img src={auction.img} alt={auction.title} />
+                    </div>
+                )}
+                <br/>
+                <hr/>
                 <br/>
                 <p><h5><b>Подетални информации</b></h5></p>
                 <p><strong>Опис:</strong> {auction.description}</p>

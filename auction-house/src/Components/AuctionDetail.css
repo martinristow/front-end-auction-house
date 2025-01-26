@@ -41,3 +41,12 @@
     color: #e74c3c; /* Црвена боја за предупредување */
     margin-top: 50px;
 }
+
+
+.auction-image img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
