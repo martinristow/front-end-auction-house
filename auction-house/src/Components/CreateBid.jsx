@@ -13,7 +13,7 @@ function CreateBid({ auctionId, updateBids }) {
 
         // Validate the amount
         if (isNaN(amount) || parseFloat(amount) <= 0) {
-            setError('Bid amount must be a valid number greater than 0');
+            setError('Износот на понудата мора да биде валиден број поголем од 0!');
             setMessage(null);
             return;
         }
@@ -36,7 +36,7 @@ function CreateBid({ auctionId, updateBids }) {
             );
 
             // Handle success
-            setMessage('Your bid has been successfully created!');
+            setMessage('Вашата понуда е успешно креирана!');
             setError(null);
             setAmount('');  // Clear the form
 
