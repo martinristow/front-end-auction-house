@@ -44,6 +44,11 @@ const ActiveAuctions = () => {
                         <Col md={4} key={auction.id} className="mb-4">
                             <Card>
                                 <Card.Body>
+                                    {auction.img && (
+                                        <div className="auction-image">
+                                            <img src={auction.img} alt={auction.title} />
+                                        </div>
+                                    )}
                                     <Card.Title>{auction.title}</Card.Title>
                                     <Card.Text>
                                         <strong>Опис:</strong> {auction.description} <br />
