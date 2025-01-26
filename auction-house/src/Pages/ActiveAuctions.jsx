@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { Link } from 'react-router-dom';
 import Footer from "./../Components/Footer.jsx"
+import "./../Components/ActiveAuctions.css"
 
 const ActiveAuctions = () => {
     const [auctions, setAuctions] = useState([]);
@@ -45,7 +46,7 @@ const ActiveAuctions = () => {
                             <Card>
                                 <Card.Body>
                                     {auction.img && (
-                                        <div className="auction-image">
+                                        <div className="active-auction-image">
                                             <img src={auction.img} alt={auction.title} />
                                         </div>
                                     )}
