@@ -1,4 +1,3 @@
-// src/Components/CreateAuctionForm.jsx
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -9,8 +8,20 @@ const CreateAuctionForm = () => {
     const [description, setDescription] = useState("");
     const [startingPrice, setStartingPrice] = useState("");
     const [endDate, setEndDate] = useState("");
+    const [imageFile, setImageFile] = useState(null); // Додадено за датотеката
     const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
+
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = () => {
+                setImageFile(reader.result); // Конвертирање на сликата во Base64
+            };
+            reader.readAsDataURL(file);
+        }
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -19,13 +30,15 @@ const CreateAuctionForm = () => {
             description: description,
             starting_price: startingPrice,
             end_date: endDate,
+            img: imageFile, // Base64 string на сликата
         };
 
         try {
             const response = await axios.post("http://localhost:8000/auctions", auctionData, {
                 headers: {
-                    "Authorization": `Bearer ${localStorage.getItem("token")}`
-                }
+                    "Authorization": `Bearer ${localStorage.getItem("token")}`,
+                    "Content-Type": "application/json",
+                },
             });
             navigate("/categories/active-auctions");
         } catch (error) {
@@ -76,6 +89,15 @@ const CreateAuctionForm = () => {
                         type="datetime-local"
                         value={endDate}
                         onChange={(e) => setEndDate(e.target.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Image:</label>
+                    <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleFileChange}
                         required
                     />
                 </div>
