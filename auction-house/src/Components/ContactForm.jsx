@@ -24,7 +24,7 @@ function ContactForm() {
                             />
                         </Form.Group>
                         <Button variant="dark" type="submit" className="button23">
-                            SEND MESSAGE
+                            ПРАТИ ПОРАКА
                         </Button>
                     </Form>
                 </Card>
