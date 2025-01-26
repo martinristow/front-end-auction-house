@@ -45,7 +45,7 @@ const CreateAuctionForm = () => {
             console.error("Error creating auction:", error);
 
             if (error.response && error.response.status === 401) {
-                setErrorMessage("You must be an admin to create an auction.");
+                setErrorMessage("Мора да бидете админ за да креирате аукција.");
             } else {
                 setErrorMessage("An error occurred while creating the auction.");
             }
@@ -54,11 +54,11 @@ const CreateAuctionForm = () => {
 
     return (
         <div className="create-auction-form">
-            <h2>Create Auction</h2>
+            <h2>Креирај аукција</h2>
             {errorMessage && <div className="error-message">{errorMessage}</div>}
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Title:</label>
+                    <label>Наслов:</label>
                     <input
                         type="text"
                         value={title}
@@ -67,7 +67,7 @@ const CreateAuctionForm = () => {
                     />
                 </div>
                 <div>
-                    <label>Description:</label>
+                    <label>Опис:</label>
                     <textarea
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
@@ -75,7 +75,7 @@ const CreateAuctionForm = () => {
                     />
                 </div>
                 <div>
-                    <label>Starting Price:</label>
+                    <label>Почетна цена:</label>
                     <input
                         type="number"
                         value={startingPrice}
@@ -84,7 +84,7 @@ const CreateAuctionForm = () => {
                     />
                 </div>
                 <div>
-                    <label>End Date:</label>
+                    <label>Завршување на аукцијата:</label>
                     <input
                         type="datetime-local"
                         value={endDate}
@@ -93,7 +93,7 @@ const CreateAuctionForm = () => {
                     />
                 </div>
                 <div>
-                    <label>Image:</label>
+                    <label>Слика:</label>
                     <input
                         type="file"
                         accept="image/*"
@@ -101,7 +101,7 @@ const CreateAuctionForm = () => {
                         required
                     />
                 </div>
-                <button type="submit">Create Auction</button>
+                <button type="submit">Креирај аукција</button>
             </form>
         </div>
     );
