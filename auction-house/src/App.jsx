@@ -12,6 +12,7 @@ import GetAuctionById from "./Pages/GetAuctionById.jsx";
 import PrivateRoute from './Components/PrivateRoute';
 import CreateAuction from "./Pages/CreateAuction.jsx";
 import AllAuctions from "./Pages/AllAuctions.jsx";
+import WhiskyAuctions from "./Pages/WhiskyAuctions.jsx";
 
 function App() {
     return (
@@ -24,7 +25,7 @@ function App() {
                 <Route path="/categories/all" element={<AllAuctions />} />
                 <Route path="/categories/closed-auctions" element={<FinishedAuctions />} />
                 <Route path="/categories/active-auctions" element={<ActiveAuctions />} />
-
+                <Route path="/whisky-auctions" element={<WhiskyAuctions />} />
                 {/* Use PrivateRoute to wrap protected route */}
                 <Route path="/auction/:id" element={<PrivateRoute><GetAuctionById /></PrivateRoute>} />
                 <Route path="/auctions" element={<PrivateRoute><CreateAuction /></PrivateRoute>} />

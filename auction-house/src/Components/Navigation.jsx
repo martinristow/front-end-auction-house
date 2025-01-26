@@ -44,6 +44,7 @@ function Navigation() {
                             <NavDropdown.Item href="/categories/active-auctions">Активни Аукции</NavDropdown.Item>
                             <NavDropdown.Item href="/categories/closed-auctions">Завршени Аукции</NavDropdown.Item>
                         </NavDropdown>
+                        <Nav.Link as={Link} to="/whisky-auctions">Whisky</Nav.Link>
                         {!isLoggedIn && <Nav.Link as={Link} to="/login">Најави се</Nav.Link>}
                         {!isLoggedIn && <Nav.Link as={Link} to="/register">Регистрирај се</Nav.Link>}
                     </Nav>
