@@ -1,20 +1,20 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import "./DesignAllAuctions.css"
 
 const AuctionCard = ({ auction }) => {
     // Check if the auction is active based only on is_active
     const isAuctionActive = auction.is_active; // Samo proverka na is_active
-    console.log(auction);
+    // console.log(auction);
     return (
         <Col md={4} key={auction.id} className="mb-4">
             <Card>
                 <Card.Body>
                     {auction.img && (
-                        <div className="auction-image">
+                        <div className="all-auction-image">
                             <img src={auction.img} alt={auction.title} />
                         </div>
                     )}

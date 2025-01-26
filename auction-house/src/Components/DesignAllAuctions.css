@@ -1,0 +1,14 @@
+.all-auction-image img {
+    max-width: 100%;
+    max-height: 200px; /* Пример: Поставување на фиксна висина */
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.all-auction-image {
+    display: flex;
+    justify-content: center; /* Центрира хоризонтално */
+    align-items: center; /* Опционално: Центрира вертикално ако е потребно */
+}
