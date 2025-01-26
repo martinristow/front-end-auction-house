@@ -24,7 +24,7 @@ function Navigation() {
 
         <Navbar expand="lg" className="custom-navbar">
             <Container fluid>
-                <Navbar.Brand as={Link} to="/">Auction House</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/">Аукциска Куќа</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -35,17 +35,17 @@ function Navigation() {
                         {/*{!isLoggedIn && <Nav.Link as={Link} to="/login">Login</Nav.Link>}*/}
                         {isLoggedIn && (
                             <>
-                            <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
-                            <Nav.Link as={Link} to="/auctions">Create Auctions</Nav.Link>
+                            {/*<Nav.Link as={Link} to="/profile">Profile</Nav.Link>*/}
+                            <Nav.Link as={Link} to="/auctions">Креирај Аукција</Nav.Link>
                             </>
                         )}
-                        <NavDropdown title="Categories" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="/categories/all">All Auctions</NavDropdown.Item>
-                            <NavDropdown.Item href="/categories/active-auctions">Active Auctions</NavDropdown.Item>
-                            <NavDropdown.Item href="/categories/closed-auctions">Finished Auctions</NavDropdown.Item>
+                        <NavDropdown title="Ауцкии" id="navbarScrollingDropdown">
+                            <NavDropdown.Item href="/categories/all">Сите Аукции</NavDropdown.Item>
+                            <NavDropdown.Item href="/categories/active-auctions">Активни Аукции</NavDropdown.Item>
+                            <NavDropdown.Item href="/categories/closed-auctions">Завршени Аукции</NavDropdown.Item>
                         </NavDropdown>
-                        {!isLoggedIn && <Nav.Link as={Link} to="/login">Login</Nav.Link>}
-                        {!isLoggedIn && <Nav.Link as={Link} to="/register">Register</Nav.Link>}
+                        {!isLoggedIn && <Nav.Link as={Link} to="/login">Најави се</Nav.Link>}
+                        {!isLoggedIn && <Nav.Link as={Link} to="/register">Регистрирај се</Nav.Link>}
                     </Nav>
                     <Form className="d-flex">
 
