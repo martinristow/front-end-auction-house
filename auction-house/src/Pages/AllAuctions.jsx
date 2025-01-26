@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Row from "react-bootstrap/Row";
-import AuctionCard from "../Components/AllAuctions.jsx"; // Правилно именување на компонентата
+import AuctionCard from "../Components/DesignAllAuctions.jsx"; // Правилно именување на компонентата
 import Footer from "./../Components/Footer.jsx";
+
 
 const AllAuctions = () => {
     const [auctions, setAuctions] = useState([]);
