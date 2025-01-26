@@ -7,37 +7,34 @@ import CreateBid from "../Components/CreateBid.jsx";
 import Footer from "../Components/Footer.jsx";
 
 function AuctionPage() {
-    const { id } = useParams(); // Auction ID од URL
-    const [bids, setBids] = useState([]); // Држиме понуди
+    const { id } = useParams();
+    const [bids, setBids] = useState([]);
 
-    // Функција за вчитување на понудите од серверот
     const fetchBids = () => {
         const token = localStorage.getItem('token');
         axios.get(`http://localhost:8000/bids/${id}`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then(response => {
-                setBids(response.data); // Сортирање од најново кон најстаро
+                setBids(response.data);
             })
             .catch(error => console.error('Error fetching bids', error));
     };
 
-    // Освежување при прво вчитување или промена на ID
     useEffect(() => {
         fetchBids();
     }, [id]);
 
-    // Функција за локално додавање на нова понуда
     const updateBids = (newBid) => {
-        setBids((prevBids) => [newBid, ...prevBids]); // Додавање на врвот
+        setBids((prevBids) => [newBid, ...prevBids]);
     };
 
     return (
         <div>
             <AuctionDetails id={id} />
-            <BidsDetail bids={bids} /> {/* Пропси со понуди */}
-            <CreateBid auctionId={id} updateBids={updateBids} /> {/* Ажурирање на понудите */}
-            <Footer/>
+            <BidsDetail bids={bids} />
+            <CreateBid auctionId={id} updateBids={updateBids} />
+            <Footer />
         </div>
     );
 }

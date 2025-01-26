@@ -1,9 +1,9 @@
-// src/components/ActiveAuctions.js
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import "./DesignAllAuctions.css"
 
 const FinishedAuctions = () => {
     const [auctions, setAuctions] = useState([]);
@@ -42,7 +42,7 @@ const FinishedAuctions = () => {
                         <Card>
                             <Card.Body>
                                 {auction.img && (
-                                    <div className="auction-image">
+                                    <div className="all-auction-image">
                                         <img src={auction.img} alt={auction.title} />
                                     </div>
                                 )}
