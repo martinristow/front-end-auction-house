@@ -1,12 +1,20 @@
-// src/Components/RegisterForm.jsx
 import React, { useState } from "react";
 import API from "../api/api";
 
 const RegisterForm = ({ onRegister }) => {
-    const [formData, setFormData] = useState({ username: "", email: "", password: "" });
+    const [formData, setFormData] = useState({
+        username: "",
+        email: "",
+        password: "",
+        is_admin: false, // Додадено поле
+    });
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value, type, checked } = e.target;
+        setFormData({
+            ...formData,
+            [name]: type === "checkbox" ? checked : value, // За checkbox користи `checked`
+        });
     };
 
     const handleSubmit = async (e) => {
@@ -27,7 +35,7 @@ const RegisterForm = ({ onRegister }) => {
 
     return (
         <div className="d-flex justify-content-center align-items-center min-vh-100">
-            <form onSubmit={handleSubmit} className="w-100" style={{ maxWidth: '400px' }}>
+            <form onSubmit={handleSubmit} className="w-100" style={{ maxWidth: "400px" }}>
                 <div className="mb-3">
                     <label htmlFor="username" className="form-label">Username</label>
                     <input
@@ -73,12 +81,25 @@ const RegisterForm = ({ onRegister }) => {
                     />
                 </div>
 
+                <div className="mb-3 form-check">
+                    <input
+                        type="checkbox"
+                        id="is_admin"
+                        name="is_admin"
+                        className="form-check-input"
+                        checked={formData.is_admin}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="is_admin" className="form-check-label">
+                        Register as Admin
+                    </label>
+                </div>
+
                 <button type="submit" className="btn btn-primary w-100">
                     Register
                 </button>
             </form>
         </div>
-
     );
 };
 
