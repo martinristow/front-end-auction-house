@@ -58,10 +58,10 @@ function CreateBid({ auctionId, updateBids }) {
 
     return (
         <div className="create-bid-container">
-            <h2>Create a Bid</h2>
+            <h2>Креирај понуда</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="amount">Bid Amount (MKD):</label>
+                    <label htmlFor="amount">Износ (MKD):</label>
                     <input
                         type="number"
                         id="amount"
@@ -72,7 +72,7 @@ function CreateBid({ auctionId, updateBids }) {
                     />
                 </div>
                 <button type="submit" className="btn-primary" disabled={isLoading}>
-                    {isLoading ? 'Submitting...' : 'Submit Bid'}
+                    {isLoading ? 'Submitting...' : 'Понуди'}
                 </button>
             </form>
 
