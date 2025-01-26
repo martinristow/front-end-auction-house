@@ -6,9 +6,9 @@ import "./ContactForm.css";
 function ContactForm() {
     return (
         <>
-            <div className="containerForm">
+            <div className="container mt-4">
+                <h1 className="text-center">Контактирајте не</h1>
                 <Card className="card-form">
-                    <h1 className="center-textt">Контактирајте не</h1>
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Емаил адреса</Form.Label>
