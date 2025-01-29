@@ -4,7 +4,7 @@ import axios from 'axios';
 import './AuctionDetail.css';
 
 function AuctionDetails() {
-    const { id } = useParams();
+    const { id } = useParams(); // go zimame id-to od URL-to
     const navigate = useNavigate();
     const [auction, setAuction] = useState(null);
     const [remainingTime, setRemainingTime] = useState(0);

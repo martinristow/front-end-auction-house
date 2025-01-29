@@ -12,19 +12,19 @@ const CreateAuctionForm = () => {
     const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
 
-    const handleFileChange = (event) => {
-        const file = event.target.files[0];
+    const handleFileChange = (event) => { // se koristi za obrabotka na prikacena slika od korisnik
+        const file = event.target.files[0]; // ja zemame prvata izbranata datoteka(slika)
         if (file) {
-            const reader = new FileReader();
-            reader.onload = () => {
+            const reader = new FileReader(); // vgraden JavaScript Api koj se koristi za citanje na sodrzinata na fajlovite
+            reader.onload = () => { // koga fajlot e celosno procitan(onload)
                 setImageFile(reader.result); // Конвертирање на сликата во Base64
             };
-            reader.readAsDataURL(file);
+            reader.readAsDataURL(file); // ja konvertira slikata vo Base64 format koj moze direktno da se prikaze vo <img src="slika.jpg" />
         }
     };
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
+        event.preventDefault(); // ova ja sprecuva standardnata akcija na formata, koja obicno bi bilo osvezuvanje na stranata ili prakjanje na baranje kon serverot
         const auctionData = {
             title: title,
             description: description,

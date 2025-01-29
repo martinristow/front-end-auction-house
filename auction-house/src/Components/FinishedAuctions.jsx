@@ -13,7 +13,7 @@ const FinishedAuctions = () => {
     useEffect(() => {
         const fetchAuctions = async () => {
             try {
-                const response = await axios.get("http://localhost:8000/categories/closed-auctions"); // Замени ја со твојата бекенд адреса
+                const response = await axios.get("http://localhost:8000/categories/closed-auctions"); // backend ruta za zavrseni aukcii
                 setAuctions(response.data);
                 setLoading(false);
             } catch (err) {

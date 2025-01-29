@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import API from "../api/api";
 
+// forma za podatocite koj sto ke gi vnesuva korisnikot
 const RegisterForm = ({ onRegister }) => {
     const [formData, setFormData] = useState({
         username: "",
@@ -8,7 +9,7 @@ const RegisterForm = ({ onRegister }) => {
         password: "",
         is_admin: false, // Додадено поле
     });
-
+    // Gi azurira podatocite vo sostojbata koga korisnikot menuva nekoj od podatocite
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setFormData({
@@ -16,7 +17,7 @@ const RegisterForm = ({ onRegister }) => {
             [name]: type === "checkbox" ? checked : value, // За checkbox користи `checked`
         });
     };
-
+    // Gi isprakja podatocite do serverot za registracija. Ako e uspesna ke se zacuva tokenot vo localStorage
     const handleSubmit = async (e) => {
         e.preventDefault();
 

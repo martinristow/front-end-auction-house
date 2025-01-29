@@ -12,7 +12,7 @@ function Navigation() {
     // State za korisnikot
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    // Provjeri dali postoi token vo localStorage
+    // Proveri dali postoi token vo localStorage
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (token) {

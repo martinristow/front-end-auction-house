@@ -8,10 +8,13 @@ const LoginForm = ({ onLogin }) => {
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
+    // ...formData ja obrabotuva sekoja promena vo formata, i ja azurira sostojbata formData
+    // e.target.name -> ovoj atribut se koristi za da se odredi dali poleto sto se promenuva e pusername ili password za da moze da se obnovat ovie vrednosti.
+    // e.target.value -> se primenuva novata vrednost na poleto, bez da se izgubat prethodno vnesenite podatoci (poradi spread operatorot ...formData)
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault(); // sprecuva osvezuvanje na stranicata
         const form = new FormData();
         form.append("username", formData.username);
         form.append("password", formData.password);
@@ -20,7 +23,7 @@ const LoginForm = ({ onLogin }) => {
             const res = await API.post("/login", form, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
-            localStorage.setItem("token", res.data.access_token);
+            localStorage.setItem("token", res.data.access_token); // po uspesen login serverot go vrakja JWT token
             setErrorMessage(""); // Исчисти ја грешката ако е успешен логин
             // alert("Login successful!");
             if (onLogin) onLogin();

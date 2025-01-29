@@ -9,7 +9,7 @@ function CreateBid({ auctionId, updateBids }) {
     const [isLoading, setIsLoading] = useState(false);  // Loading state
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
+        event.preventDefault(); // ova ja sprecuva standardnata akcija na formata, koja obicno bi bilo osvezuvanje na stranata ili prakjanje na baranje kon serverot
 
         // Validate the amount
         if (isNaN(amount) || parseFloat(amount) <= 0) {
