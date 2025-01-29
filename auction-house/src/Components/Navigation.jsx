@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import LogoutButton from "./LogoutButton.jsx";
 import { Link } from 'react-router-dom';
-
+import LogoImage from './../assets/logo1.png';
 function Navigation() {
     // State za korisnikot
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,7 +24,10 @@ function Navigation() {
 
         <Navbar expand="lg" className="custom-navbar">
             <Container fluid>
-                <Navbar.Brand as={Link} to="/">Аукциска Куќа</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/" className="nav-brand-with-logo">
+                    <img src={LogoImage} alt="Auction house Logo" className="logo" />
+                    Аукциска Куќа
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav

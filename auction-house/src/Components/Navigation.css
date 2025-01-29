@@ -16,3 +16,15 @@
 .custom-navbar .navbar-brand {
     font-weight: bold;
 }
+
+/* Стилирање на сликата и текстот во навигацијата */
+.custom-navbar .nav-brand-with-logo {
+    display: flex; /* Користиме flex за порамнување */
+    align-items: center; /* Центрираме елементите по вертикала */
+}
+
+.custom-navbar .nav-brand-with-logo img {
+    width: 30px; /* Поставете ширина на сликата */
+    height: auto; /* Одржете сооднос на висината */
+    margin-right: 10px; /* Размакнување помеѓу сликата и текстот */
+}
