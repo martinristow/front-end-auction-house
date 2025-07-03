@@ -3,16 +3,14 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd auction-house
         - npm install
     build:
       commands:
-        - cd auction-house
         - npm run build
   artifacts:
-    baseDirectory: auction-house/dist
+    baseDirectory: dist
     files:
       - '**/*'
   cache:
     paths:
-      - auction-house/node_modules/**/* 
+      - node_modules/**/*
