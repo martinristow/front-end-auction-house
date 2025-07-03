@@ -1,9 +1,9 @@
 // src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import Home from "./pages/Home";
+import Register from "./Pages/Register.jsx";
+import Login from "./Pages/Login.jsx";
+import Home from "./Pages/Home.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from "./Components/Navigation.jsx";
 import FinishedAuctions from "./Pages/FinishedAuctions.jsx";
