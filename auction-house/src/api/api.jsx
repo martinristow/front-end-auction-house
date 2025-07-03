@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({ // kreirame instanca na axios so baseURL: localhost:8000
-    baseURL: "http://localhost:8000", // site baranja napraveni preku API ke se prakjaat do lokalniot server na porta 8000
+    baseURL: `${import.meta.env.VITE_API_BASE_URL}`, // site baranja napraveni preku API ke se prakjaat do lokalniot server na porta 8000
 });
 
 // Dodavanje na Bearer Token

@@ -12,7 +12,7 @@ function AuctionPage() {
 
     const fetchBids = () => {
         const token = localStorage.getItem('token');
-        axios.get(`http://localhost:8000/bids/${id}`, {
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}/bids/${id}`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then(response => {

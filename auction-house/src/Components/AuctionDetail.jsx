@@ -24,7 +24,7 @@ function AuctionDetails() {
             console.error("Invalid token format:", error);
         }
 
-        axios.get(`http://localhost:8000/auctions/${id}`, {
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}/auctions/${id}`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then(response => setAuction(response.data))
@@ -57,7 +57,7 @@ function AuctionDetails() {
         const confirmation = window.confirm("Дали сте сигурни дека сакате да ја избришете аукцијата?");
         if (confirmation) {
             const token = localStorage.getItem("token");
-            axios.delete(`http://localhost:8000/auctions/${id}`, {
+            axios.delete(`${import.meta.env.VITE_API_BASE_URL}/auctions/${id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             })
                 .then(() => {

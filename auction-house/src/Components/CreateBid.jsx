@@ -25,7 +25,7 @@ function CreateBid({ auctionId, updateBids }) {
 
         try {
             const response = await axios.post(
-                'http://localhost:8000/bids',  // API endpoint
+                `${import.meta.env.VITE_API_BASE_URL}/bids`,  // API endpoint со environment променлива
                 { amount: parseFloat(amount), auction_id: auctionId },  // Data to send
                 {
                     headers: {

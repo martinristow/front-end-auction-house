@@ -16,7 +16,7 @@ const ActiveAuctions = () => {
     useEffect(() => {
         const fetchAuctions = async () => {
             try {
-                const response = await axios.get("http://localhost:8000/categories/active-auctions"); // Замени ја со точниот URL од бекендот
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/categories/active-auctions`); // Замени ја со точниот URL од бекендот
                 setAuctions(response.data);
                 setLoading(false);
             } catch (err) {

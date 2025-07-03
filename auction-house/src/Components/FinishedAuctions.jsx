@@ -13,7 +13,7 @@ const FinishedAuctions = () => {
     useEffect(() => {
         const fetchAuctions = async () => {
             try {
-                const response = await axios.get("http://localhost:8000/categories/closed-auctions"); // backend ruta za zavrseni aukcii
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/categories/closed-auctions`); // backend ruta za zavrseni aukcii
                 setAuctions(response.data);
                 setLoading(false);
             } catch (err) {

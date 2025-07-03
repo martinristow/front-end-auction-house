@@ -13,7 +13,7 @@ const AllAuctions = () => {
     useEffect(() => {
         const fetchAuctions = async () => {
             try {
-                const response = await axios.get("http://localhost:8000/categories/all");
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/categories/all`);
                 console.log(response.data); // Log the auction data here
                 setAuctions(response.data);
                 setLoading(false);

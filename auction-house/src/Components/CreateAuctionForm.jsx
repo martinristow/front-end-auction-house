@@ -34,7 +34,8 @@ const CreateAuctionForm = () => {
         };
 
         try {
-            const response = await axios.post("http://localhost:8000/auctions", auctionData, {
+            const response = await axios.post(
+                `${import.meta.env.VITE_API_BASE_URL}/auctions`, auctionData, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`,
                     "Content-Type": "application/json",
