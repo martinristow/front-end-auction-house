@@ -3,7 +3,6 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd auction-house
         - npm install
     build:
       commands:
