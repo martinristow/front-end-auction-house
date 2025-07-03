@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, Spinner, Row, Col } from "react-bootstrap";
-import Footer from "../components/Footer";
+import Footer from "../Components/Footer";
 
 const WhiskyHunter = () => {
     const [auctionsData, setAuctionsData] = useState([]);

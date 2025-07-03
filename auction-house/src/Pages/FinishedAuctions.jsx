@@ -1,7 +1,7 @@
 // src/pages/FinishedAuctionPage.js
 import React from "react";
-import ActiveAuctions from "../components/FinishedAuctions.jsx";
-import Footer from "../components/Footer.jsx";
+import ActiveAuctions from "../Components/FinishedAuctions.jsx";
+import Footer from "../Components/Footer.jsx";
 
 const FinishedAuctionPage = () => {
     return (
